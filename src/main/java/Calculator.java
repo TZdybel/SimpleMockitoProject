@@ -25,7 +25,7 @@ public class Calculator {
     }
 
     public String isPythagorean(int x) {
-        if (someClass.pythagoreadTriangle(x)) return "It is pythagorean triangle";
+        if (someClass.pythagoreanTriangle(x)) return "It is pythagorean triangle";
         else return "It is not pythagorean triangle";
     }
 

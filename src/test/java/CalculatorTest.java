@@ -46,8 +46,8 @@ public class CalculatorTest {
     public void test_isPythagorean_1() {
         //return value dependent on method parameter
         Calculator calc = new Calculator(someClass);
-        when(someClass.pythagoreadTriangle(anyInt())).thenReturn(true);
-        when(someClass.pythagoreadTriangle(4)).thenReturn(false);
+        when(someClass.pythagoreanTriangle(anyInt())).thenReturn(true);
+        when(someClass.pythagoreanTriangle(4)).thenReturn(false);
         assertEquals("It is pythagorean triangle", calc.isPythagorean(3));
         assertEquals("It is not pythagorean triangle", calc.isPythagorean(4));
     }
@@ -63,17 +63,17 @@ public class CalculatorTest {
     @Test
     public void test_verify() {
         //verifying what methods were called
-        when(someClass.pythagoreadTriangle(1)).thenReturn(true);
+        when(someClass.pythagoreanTriangle(1)).thenReturn(true);
         someClass.getIterator();
         someClass.getIterator();
-        someClass.pythagoreadTriangle(1);
+        someClass.pythagoreanTriangle(1);
 
-        verify(someClass).pythagoreadTriangle(ArgumentMatchers.eq(1));
+        verify(someClass).pythagoreanTriangle(ArgumentMatchers.eq(1));
         verify(someClass, times(2)).getIterator();
         verify(someClass, never()).add(); //never called
         verify(someClass, atLeastOnce()).getIterator(); //called at least one time
         verify(someClass, atLeast(2)).getIterator(); //called at least 2 times
-        verify(someClass, atMost(1)).pythagoreadTriangle(1); //called at most 1 time
+        verify(someClass, atMost(1)).pythagoreanTriangle(1); //called at most 1 time
         verify(someClass, times(2)).getIterator(); // called exactly 2 times
     }
 }

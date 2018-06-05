@@ -21,11 +21,17 @@ public class SomeClass {
         return results.iterator();
     }
 
-    public boolean pythagoreadTriangle(int z) {
+    public boolean pythagoreanTriangle(int z) {
+        if ((z*z) == (x*x) + (y*y)) {
+            results.add(1);
+        } else {
+            results.add(0);
+        }
         return (z*z) == (x*x) + (y*y);
     }
 
     public int divide() throws ArithmeticException {
+        results.add(x/y);
         return x/y;
     }
 }
